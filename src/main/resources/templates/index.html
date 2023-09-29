@@ -1,1 +1,72 @@
-tyuftyjyuukj
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA Compatible" content="IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css} " />
+
+    <title>Class-Routine-Management</title>
+</head>
+
+<body>
+    <div class="container">
+        <H1>
+            <FONT COLOR="DARKCYAN">
+                <CENTER>CSE 14th Batch Class Schedule
+            </FONT>
+        </H1>
+        <H2>
+            <FONT COLOR="blue">
+                <CENTER>Sylhet Engineering College
+            </FONT>
+        </H2>
+        <hr />
+        <p th:text="|Happy ${Today}">Today</p>
+        <table class="table table-bordered table-striped" border="2" cellspacing="3" align="center">
+            <thead>
+                <tr class="text-center">
+                    <th>Day of the Week</th>
+                    <th>Period 1</th>
+                    <th>Period 2</th>
+                    <th>Tea Break</th>
+                    <th>Period 3</th>
+                    <th>Period 4</th>
+                    <th>Lunch Break</th>
+                    <th>Period 5</th>
+                    <th>Actions</th>
+                </tr>
+                <tbody>
+                    <tr th:each="item : ${RoutineItems}">
+                        <!-- <td class="text-center">
+                            <div class="btn btn-group-sm" role="group">
+                                <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
+                                    <i class="bi bi-pencil-fill"></i> Edit </a>
+                                <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
+                                    <i class="bi bi-trash-fill"></i> Delete </a>
+                            </div>
+                        </td> -->
+                        <td class="text-center" th:text="${item.din}">Day</td>
+                        <td class="text-center" th:text="${item.p1}">period1</td>
+                        <td class="text-center" th:text="${item.p2}">period2</td>
+                        <td class="text-center" th:text="${item.tb}">TeaBreak</td>
+                        <td class="text-center" th:text="${item.p3}">period3</td>
+                        <td class="text-center" th:text="${item.p4}">period4</td>
+                        <td class="text-center" th:text="${item.lb}">LunchBreak</td>
+                        <td class="text-center" th:text="${item.p5}">period5</td>
+                        <td>
+                            <a  th:href="@{/edit/{id}(id=${item.id})}">
+                                <i class="bi bi-pencil-fill"></i> Edit </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    <script th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>
