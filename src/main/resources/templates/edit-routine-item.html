@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA Compatible" content="IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css} " />
+
+    <title>Class-Schedule-Management-App</title>
+    <style>
+        .grid-container {
+          display: flex;
+          justify-content: center;
+          background-color: #ffffff;
+          padding: 10px;
+        }
+        .grid-item {
+          background-color: rgba(255, 255, 255, 0.8);
+          width: 50%;
+          border: 5px solid rgba(0, 0, 0, 0.8);
+          border-radius: 5%;
+          box-shadow: 10px 10px 5px lightblue;
+          padding: 30px;
+          font-size: 20px;
+          text-align: center;
+          margin-top: 2%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content:start;
+            height: 50px;
+            background: #902c0b;
+            font-family: 'Times New Roman', Times, serif;
+            font-size:larger;
+            padding-bottom: 1%;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="grid-container">
+     <div class="grid-item">
+        
+        <form action="#"  th:action="@{/Routine/{id}(id=${Routine.id})}"
+             th:object="${Routine}" method="POST">
+            
+            <div class="form-group">
+                <label for="din">Day of the Week</label>
+                <input class="form-control" type ="text" th:field="*{din}" id="din" placeholder="Edit Week Day">
+            </div>
+
+            <div class="form-group">
+                <label for="p1">Period 1</label>
+                <input class="form-control" type ="text" th:field="*{p1}" id="p1" placeholder="Edit Period 1">
+            </div>
+
+            <div class="form-group">
+                <label for="p2">Period 2</label>
+                <input class="form-control" type ="text" th:field="*{p2}" id="p2" placeholder="Edit Period 2">
+            </div>
+
+            <div class="form-group">
+                <label for="tb">Tea Break Time</label>
+                <input class="form-control" type ="text" th:field="*{tb}" id="tb" placeholder="Edit TeaBreak Time">
+            </div>
+
+            <div class="form-group">
+                <label for="p3">Period 3</label>
+                <input class="form-control" type ="text" th:field="*{p3}" id="p3" placeholder="Edit Period 3">
+            </div>
+
+            <div class="form-group">
+                <label for="p1">Period 4</label>
+                <input class="form-control" type ="text" th:field="*{p4}" id="p4" placeholder="Edit Period 4">
+            </div>
+
+            <div class="form-group">
+                <label for="p1">Lunch Break Time</label>
+                <input class="form-control" type ="text" th:field="*{lb}" id="lb" placeholder="Lunch Break Time">
+            </div>
+
+            <div class="form-group">
+                <label for="p1">Period 5</label>
+                <input class="form-control" type ="text" th:field="*{p5}" id="p5" placeholder="Edit Period 5">
+            </div>
+
+            <button class="btn btn-success" type="submit">Update</button>
+        </form>
+         
+     </div>
+
+    </div>
+</body>
+
+</html>
