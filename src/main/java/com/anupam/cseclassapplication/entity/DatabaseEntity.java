@@ -1,8 +1,5 @@
 package com.anupam.cseclassapplication.entity;
 
-//import org.hibernate.annotations.CreationTimestamp;
-//import org.hibernate.annotations.UpdateTimestamp;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +8,6 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-//import java.sql.Time;
 
 @Entity
 @Table(name = "Class_Item")
@@ -55,27 +51,22 @@ public class DatabaseEntity {
     @Setter
     private String p5;
 
-    //@CreationTimestamp
     @Getter
     @Setter
     private String p1Time;
 
-    //@CreationTimestamp
     @Getter
     @Setter
     private String p2Time;
 
-    //@CreationTimestamp
     @Getter
     @Setter
     private String p3Time;
 
-    //@CreationTimestamp
     @Getter
     @Setter
     private String p4Time;
 
-    //@CreationTimestamp
     @Getter
     @Setter
     private String p5Time;
@@ -102,48 +93,6 @@ public class DatabaseEntity {
         this.p5Time = p5Time;
     }
 
-    // Getter and setter methods for Time fields
-
-    // public Time getP1Time() {
-    //     return p1Time;
-    // }
-
-    // public void setP1Time(Time p1Time) {
-    //     this.p1Time = p1Time;
-    // }
-
-    // public Time getP2Time() {
-    //     return p2Time;
-    // }
-
-    // public void setP2Time(Time p2Time) {
-    //     this.p2Time = p2Time;
-    // }
-
-    // public Time getP3Time() {
-    //     return p3Time;
-    // }
-
-    // public void setP3Time(Time p3Time) {
-    //     this.p3Time = p3Time;
-    // }
-
-    // public Time getP4Time() {
-    //     return p4Time;
-    // }
-
-    // public void setP4Time(Time p4Time) {
-    //     this.p4Time = p4Time;
-    // }
-
-    // public Time getP5Time() {
-    //     return p1Time;
-    // }
-
-    // public void setP5Time(Time p5Time) {
-    //     this.p5Time = p5Time;
-    // }
-
     @Override
     public String toString() {
         return String.format(
@@ -151,3 +100,5 @@ public class DatabaseEntity {
                 id, din, p1, p1Time, p2, p2Time, tb, p3, p3Time, p4, p4Time, lb, p5, p5Time);
     }
 }
+
+

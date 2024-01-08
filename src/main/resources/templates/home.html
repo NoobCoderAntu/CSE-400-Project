@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css} " />
 
-    <title>Class-Routine-Management</title>
+    <title>SEC-CSE-Class-Routine</title>
 </head>
 <style>
     .grid-container {
         display: flex;
         justify-content: center;
-        background-color: #7d96ae;
+        background-color: #f0f1f2;
         padding: 10px;
     }
 
@@ -77,14 +77,15 @@
     }
 </style>
 <body>
-    <ul>
-        <li><a class="active" th:href="@{/registration}">Registration</a></li>
-        <li style="float:right"><a class="active" th:href="@{/logout}" >Log out</a></li>
-    </ul>
+<ul>
+    <li><a class="active" th:href="@{/registration}">Registration</a></li>
+    <li style="float:right"><a class="active" th:href="@{/logout}" >Log out</a></li>
+</ul>
     <div class="header">
-        <h3>CR Dashboard</h3>
+        <h3>Student Dashboard</h3>
     </div>
-    <div class="container" >
+    <div class="container">
+
         <H1>
             <FONT COLOR="DARKCYAN">
                 <CENTER>CSE 14th BATCH CLASS SCHEDULE
@@ -113,7 +114,6 @@
                     <th>Lunch Break</th>
                     <th>Period 5</th>
                    
-                    <th>Actions</th>
                 </tr>
                 <tbody>
                     <tr th:each="item : ${RoutineItems}">
@@ -145,10 +145,6 @@
                             <div th:text="${item.p5Time}" >Time not Set</div>
                         </td>
                        
-                        <td class="text-center">
-                            <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
-                                <i class="bi bi-pencil-fill"></i> Edit </a>
-                        </td>
                     </tr>
                 </tbody>
             </thead>

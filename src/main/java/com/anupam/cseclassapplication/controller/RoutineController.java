@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.anupam.cseclassapplication.entity.DatabaseEntity;
 import com.anupam.cseclassapplication.repo.EntityRepo;
+//import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -22,10 +24,24 @@ public class RoutineController {
     EntityRepo entityRepo;
     
     @GetMapping("/")
-    public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("index");
+    public String showLogInPage() {
+        return "login";
+    }
 
-        modelAndView.addObject("RoutineItems", entityRepo.findAll()); 
+    @GetMapping("/index")
+     public ModelAndView index() {
+         ModelAndView modelAndView = new ModelAndView("index");
+
+         modelAndView.addObject("RoutineItems", entityRepo.findAll());
+         modelAndView.addObject("Today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
+         return modelAndView;
+     }
+
+    @GetMapping("/home")
+    public ModelAndView home() {
+        ModelAndView modelAndView = new ModelAndView("home");
+
+        modelAndView.addObject("RoutineItems", entityRepo.findAll());
         modelAndView.addObject("Today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
         return modelAndView;
     }
@@ -43,7 +59,8 @@ public class RoutineController {
     public String updateRoutineItem(@PathVariable("id") long id, DatabaseEntity databaseEntity, Model model){
         
         entityRepo.save(databaseEntity);
-        return "redirect:/";
+        return "redirect:/index";
 
     }
+    
 }

@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.4</version>
+		<version>3.0.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.anupam</groupId>
 	<artifactId>cse-class-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cse-class-application</name>
-	<description>Second Semester project for Spring Boot</description>
+	<description>Second Year Second Semester project using Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -69,12 +69,45 @@
             <artifactId>jquery</artifactId>
             <version>3.6.4</version>
         </dependency>
+
+		<!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>3.1.4.RELEASE</version>
+        </dependency> -->
+
             <!-- <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>3.2.1</version>
         </dependency> -->
-	</dependencies>
+	
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version> <!-- Use the appropriate version -->
+            <scope>provided</scope>
+         </dependency>
+
+ 
+   <dependency>
+     <groupId>org.springframework.security</groupId>
+     <artifactId>spring-security-web</artifactId>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>
